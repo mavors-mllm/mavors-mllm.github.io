@@ -173,28 +173,106 @@
 <!-- End paper abstract -->
 
 
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Citation</h2>
-      <pre><code></code></pre>
+<!-- Paper Teaser -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Teaser</h2>
+        <figure class="image is-16by9">
+            <img src="static/images/intro_fig.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
+            <figcaption class="has-text-centered"></figcaption>
+              <p style="text-align: left;">
+                Existing video MLLMs struggle to balance computational efficiency with fine-grained spatial-temporal understanding. Sparse sampling drops crucial temporal cues, dense sampling with low-resolution lose spatial details, and token compression harms subtle motion and object interactions. To address this, we propose <strong>Mavors</strong>, a method that extracts Multi-granularity Video Representations, enabling MLLMs to retain spatial fidelity and temporal coherence across diverse video scenarios.
+              </p></p>
+            </figcaption>
+        </figure>
+      </div>
     </div>
+  </div>
+<!-- End paper teaser -->
+
+<!-- Model Architecture -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Architecture</h2>
+        <figure class="image is-16by9">
+          <img src="static/images/model_arch3.png" alt="Model Architecture" style="max-width: 100%; height: auto;">
+          <figcaption class="has-text-centered">Figure: Overview of the Mavors model architecture.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
 </section>
-<!--End BibTex citation -->
+<!-- End model architecture -->
+
+<!-- Benchmark Performance -->
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Size</th>
+      <th>MMWorld</th>
+      <th>PerceptionTest</th>
+      <th>Video-MME</th>
+      <th>MLVU</th>
+      <th>MVBench</th>
+      <th>EventHallusion</th>
+      <th>TempCompass</th>
+      <th>VinoGround</th>
+      <th>DREAM-1K</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color:lightgray;">
+      <td>GPT-4o-20240806</td><td>-</td><td>62.5</td><td>-</td><td>71.9</td><td>64.6</td><td>64.6</td><td>92.0</td><td>73.8</td><td>38.9</td><td>39.2</td>
+    </tr>
+    <tr style="color:lightgray;">
+      <td>Gemini-1.5-Pro</td><td>-</td><td>-</td><td>-</td><td>75.0</td><td>-</td><td>60.5</td><td>80.3</td><td>67.1</td><td>22.9</td><td>36.2</td>
+    </tr>
+    <tr>
+      <td>LLaVA-OneVision</td><td>7B</td><td>59.2</td><td>56.9</td><td>58.9</td><td>64.8</td><td>56.7</td><td>64.3</td><td>61.4</td><td>26.2</td><td>31.9</td>
+    </tr>
+    <tr>
+      <td>InternVL 2.5</td><td>8B</td><td>62.2</td><td>65.0</td><td>64.3</td><td>67.0</td><td>72.0</td><td>64.1</td><td>71.4</td><td>24.0</td><td>29.7</td>
+    </tr>
+    <tr>
+      <td>NVILA</td><td>8B</td><td>55.2</td><td>55.5</td><td>64.2</td><td>70.1</td><td>68.1</td><td>69.9</td><td>66.5</td><td>20.2</td><td>26.9</td>
+    </tr>
+    <tr>
+      <td>LLaVA-Video</td><td>7B</td><td>60.1</td><td>67.5</td><td>63.6</td><td>67.2</td><td>58.6</td><td>70.7</td><td>65.7</td><td>26.9</td><td>33.3</td>
+    </tr>
+    <tr>
+      <td>Oryx-1.5</td><td>7B</td><td>58.8</td><td>70.3</td><td>59.0</td><td>63.8</td><td>67.5</td><td>61.3</td><td>60.2</td><td>22.3</td><td>32.5</td>
+    </tr>
+    <tr>
+      <td>Qwen2.5-VL</td><td>7B</td><td>61.3</td><td>66.2</td><td>65.1</td><td>70.2</td><td>69.6</td><td>66.5</td><td>71.4</td><td>34.6</td><td>32.6</td>
+    </tr>
+    <tr>
+      <td>VideoLLaMA3</td><td>7B</td><td>56.4</td><td>72.8</td><td><b>66.2</b></td><td>73.0</td><td>69.7</td><td>63.4</td><td>68.1</td><td>31.3</td><td>30.5</td>
+    </tr>
+    <tr>
+      <td>VideoChat-Flash</td><td>7B</td><td>57.9</td><td><b>74.7</b></td><td>65.3</td><td><b>74.7</b></td><td><b>74.0</b></td><td>66.4</td><td>70.0</td><td>33.3</td><td>29.5</td>
+    </tr>
+    <tr>
+      <td>Slow-fast MLLM</td><td>7B</td><td>58.2</td><td>69.7</td><td>60.2</td><td>60.4</td><td>68.9</td><td>67.4</td><td>69.9</td><td>27.1</td><td>33.2</td>
+    </tr>
+    <tr style="color:lightgray;">
+      <td>Qwen2.5-VL</td><td>72B</td><td>73.1</td><td>73.2</td><td>73.3</td><td>76.6</td><td>70.4</td><td>76.3</td><td>79.1</td><td>58.6</td><td>35.1</td>
+    </tr>
+    <tr style="color:lightgray;">
+      <td>InternVL 2.5</td><td>78B</td><td>77.2</td><td>73.5</td><td>72.1</td><td>76.6</td><td>76.4</td><td>67.7</td><td>75.5</td><td>38.7</td><td>30.3</td>
+    </tr>
+    <tr>
+      <td><b>Mavors (Ours)</b></td><td>7B</td><td><b>68.1</b></td><td>70.3</td><td>65.0</td><td>69.8</td><td>68.0</td><td><b>73.5</b></td><td><b>77.4</b></td><td><b>36.9</b></td><td><b>39.4</b></td>
+    </tr>
+  </tbody>
+</table>
 
 
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+<!--BibTex citation -</section>->
 
         </div>
       </div>
