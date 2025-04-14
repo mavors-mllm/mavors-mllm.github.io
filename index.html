@@ -52,6 +52,10 @@
 <style>
   .tight-figure {
     margin-bottom: 0; /* 去除图像下方空隙 */
+    margin-top: 0; /* 去除图像上方空隙 */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   .tight-text {
@@ -196,7 +200,7 @@
       <div class="section is-80-percent">
         <h2 class="title is-3">Teaser</h2>
 
-        <figure class="image is-16by9 tight-figure">
+        <figure class="is-tight-figure">
             <img src="static/images/intro_fig.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
         </figure>
         <p class="tight-text" style="text-align: left;">
@@ -214,7 +218,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="section is-80-percent">
         <h2 class="title is-3">Model Architecture</h2>
-        <figure class="image is-16by9 tight-figure">
+        <figure class="tight-figure">
           <img src="static/images/model_arch3.png" alt="Model Architecture" style="max-width: 100%; height: auto;">
         </figure>
       </div>
