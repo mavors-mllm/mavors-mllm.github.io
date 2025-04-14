@@ -50,7 +50,15 @@
 <body>
 
 <style>
-  .section.is-80-percent {
+  .tight-figure {
+    margin-bottom: 0; /* 去除图像下方空隙 */
+  }
+
+  .tight-text {
+    margin-top: 0.5rem; /* 缩小图像和段落之间的空隙 */
+  }
+
+  .is-80-percent {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -62,7 +70,7 @@
 
   <section class="section">
     <div class="hero-body">
-      <div class="container.is-80-percent">
+      <div class="container"><style></style>
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Mavors: Multi-granularity Video Representation for Multimodal Large Language Model</h1>
@@ -172,8 +180,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Long-context video understanding in multimodal large language models (MLLMs) faces a critical challenge: balancing computational efficiency with the retention of fine-grained spatio-temporal patterns. Existing approaches (e.g., sparse sampling, dense sampling with low resolution, and token compression) suffer from significant information loss in temporal dynamics, spatial details, or subtle interactions, particularly in videos with complex motion or varying resolutions. To address this, we propose <strong>Mavors</strong>, a novel framework that introduces <strong>M</strong>ulti-gr<strong>a</strong>nularity <strong>v</strong>ide<strong>o</strong> <strong>r</strong>epre<strong>s</strong>entation for holistic long-video modeling. Specifically, Mavors directly encodes raw video content into latent representations through two core components: 1) an <strong>Intra-chunk Vision Encoder (IVE)</strong> that preserves high-resolution spatial features via 3D convolutions and Vision Transformers, and 2) an <strong>Inter-chunk Feature Aggregator (IFA)</strong> that establishes temporal coherence across chunks using transformer-based dependency modeling with chunk-level rotary position encodings. Moreover, the framework unifies image and video understanding by treating images as single-frame videos via sub-image decomposition.
-    Experiments across diverse benchmarks demonstrate Mavors' superiority in maintaining both spatial fidelity and temporal continuity, significantly outperforming existing methods in tasks requiring fine-grained spatio-temporal reasoning.
+            Long-context video understanding in multimodal large language models (MLLMs) faces a critical challenge: balancing computational efficiency with the retention of fine-grained spatio-temporal patterns. Existing approaches (e.g., sparse sampling, dense sampling with low resolution, and token compression) suffer from significant information loss in temporal dynamics, spatial details, or subtle interactions, particularly in videos with complex motion or varying resolutions. To address this, we propose <strong>Mavors</strong>, a novel framework that introduces <strong>M</strong>ulti-gr<strong>a</strong>nularity <strong>v</strong>ide<strong>o</strong> <strong>r</strong>epre<strong>s</strong>entation for holistic long-video modeling. Specifically, Mavors directly encodes raw video content into latent representations through two core components: 1) an <strong>Intra-chunk Vision Encoder (IVE)</strong> that preserves high-resolution spatial features via 3D convolutions and Vision Transformers, and 2) an <strong>Inter-chunk Feature Aggregator (IFA)</strong> that establishes temporal coherence across chunks using transformer-based dependency modeling with chunk-level rotary position encodings. Moreover, the framework unifies image and video understanding by treating images as single-frame videos via sub-image decomposition. Experiments across diverse benchmarks demonstrate Mavors' superiority in maintaining both spatial fidelity and temporal continuity, significantly outperforming existing methods in tasks requiring fine-grained spatio-temporal reasoning.
           </p>
         </div>
       </div>
@@ -182,19 +189,19 @@
 </section>
 <!-- End paper abstract -->
 
-
 <!-- Paper Teaser -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class=".section.is-80-percent">
+      <div class="section is-80-percent">
         <h2 class="title is-3">Teaser</h2>
-        <figure class="image is-16by9">
+
+        <figure class="image is-16by9 tight-figure">
             <img src="static/images/intro_fig.png" alt="Teaser Image" style="max-width: 100%; height: auto;">
-              <p style="text-align: left;">
-                Existing video MLLMs struggle to balance computational efficiency with fine-grained spatial-temporal understanding. Sparse sampling drops crucial temporal cues, dense sampling with low-resolution lose spatial details, and token compression harms subtle motion and object interactions. To address this, we propose <strong>Mavors</strong>, a method that extracts Multi-granularity Video Representations, enabling MLLMs to retain spatial fidelity and temporal coherence across diverse video scenarios.
-              </p>
         </figure>
+        <p class="tight-text" style="text-align: left;">
+                Existing video MLLMs struggle to balance computational efficiency with fine-grained spatial-temporal understanding. Sparse sampling drops crucial temporal cues, dense sampling with low-resolution lose spatial details, and token compression harms subtle motion and object interactions. To address this, we propose <strong>Mavors</strong>, a method that extracts Multi-granularity Video Representations, enabling MLLMs to retain spatial fidelity and temporal coherence across diverse video scenarios.
+        </p>
       </div>
     </div>
   </div>
@@ -205,9 +212,9 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class=".section.is-80-percent">
+      <div class="section is-80-percent">
         <h2 class="title is-3">Model Architecture</h2>
-        <figure class="image is-16by9">
+        <figure class="image is-16by9 tight-figure">
           <img src="static/images/model_arch3.png" alt="Model Architecture" style="max-width: 100%; height: auto;">
         </figure>
       </div>
